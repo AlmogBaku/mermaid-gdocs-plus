@@ -1,6 +1,37 @@
 {
-  "timeZone": "Europe/Paris",
+  "timeZone": "Asia/Jerusalem",
   "dependencies": {},
   "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8"
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/documents",
+    "https://www.googleapis.com/auth/presentations",
+    "https://www.googleapis.com/auth/script.container.ui"
+  ],
+  "addOns": {
+    "common": {
+      "name": "Mermaid Diagrams+",
+      "logoUrl": "https://raw.githubusercontent.com/AlmogBaku/mermaid-gdocs/refs/heads/master/docs/logo-128.png",
+      "useLocaleFromApp": true,
+      "homepageTrigger": {
+        "runFunction": "onOpen"
+      }
+    },
+    "docs": {
+      "homepageTrigger": {
+        "enabled": true
+      },
+      "onFileScopeGrantedTrigger": {
+        "runFunction": "onOpen"
+      }
+    },
+    "slides": {
+      "homepageTrigger": {
+        "enabled": true
+      },
+      "onFileScopeGrantedTrigger": {
+        "runFunction": "onOpen"
+      }
+    }
+  }
 }

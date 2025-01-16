@@ -4,7 +4,8 @@
     <base target="_top">
     <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
     <title>Mermaid</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧜‍♀️</text></svg>">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧜‍♀️</text></svg>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.js"></script>
 </head>
 <body>
@@ -25,7 +26,6 @@
         <button id="cancel">Cancel</button>
         <button class="action" type="submit" id="submit">Insert</button>
     </div>
-    <a id="rate" href="https://workspace.google.com/marketplace/app/mermaid/636321283856" target="_blank">Please rate this plugin</a>
 </form>
 
 <script type="module">
@@ -75,7 +75,7 @@
                 theme,
             });
             await mermaid.init(undefined, byId('preview'));
-            if(!firstRenderWidth){
+            if (!firstRenderWidth) {
                 const svg = document.getElementsByTagName('svg')[0];
                 firstRenderWidth = svg?.getBoundingClientRect().width;
             }
@@ -101,7 +101,7 @@
         let width = parseInt(vb[2]),
             height = parseInt(vb[3]);
 
-        const superScaling = width*height>500*500? 1:2;
+        const superScaling = width * height > 500 * 500 ? 1 : 2;
 
         if (!width || !height) {
             let bound = mySVG.getBoundingClientRect();
@@ -139,17 +139,17 @@
         if (!window.google) return window.open(base64);
 
         let svgSize = svg.getBoundingClientRect();
-        if(window.graphDataFromGoogle?.currentWidth && firstRenderWidth){
-            const ratio = window.graphDataFromGoogle?.currentWidth /firstRenderWidth;
-            width *=ratio;
-            height *=ratio;
+        if (window.graphDataFromGoogle?.currentWidth && firstRenderWidth) {
+            const ratio = window.graphDataFromGoogle?.currentWidth / firstRenderWidth;
+            width *= ratio;
+            height *= ratio;
         }
 
         window.google.script.run
             .withFailureHandler(msg =>
                 alert(
-                    msg+'\n\n'+
-                    '"Invalid image data" means the resulting image is too big, try to split up the chart\n'+
+                    msg + '\n\n' +
+                    '"Invalid image data" means the resulting image is too big, try to split up the chart\n' +
                     '"Authorization is required" means your should log out of all other google accounts.'
                 )
             )
@@ -172,7 +172,7 @@
 
     function setupEventListeners() {
         byId('form').addEventListener('submit', submitGraph);
-        
+
         byId('cancel').addEventListener('click', e => {
             e.preventDefault();
             cancelEdit();
@@ -195,10 +195,10 @@
             await initializeMermaid();
 
             // Set up Monaco
-            require.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs' }});
-            require(['vs/editor/editor.main'], function() {
+            require.config({paths: {vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs'}});
+            require(['vs/editor/editor.main'], function () {
                 // Register Mermaid language
-                monaco.languages.register({ id: 'mermaid' });
+                monaco.languages.register({id: 'mermaid'});
                 monaco.languages.setMonarchTokensProvider('mermaid', {
                     tokenizer: {
                         root: [
@@ -215,7 +215,7 @@
                 editor = monaco.editor.create(document.getElementById('editor'), {
                     value: window.graphDataFromGoogle?.source || defaultContent,
                     language: 'mermaid',
-                    minimap: { enabled: false },
+                    minimap: {enabled: false},
                     lineNumbers: 'on',
                     theme: 'vs',
                     fontSize: 14,
@@ -276,8 +276,15 @@
         gap: 20px;
     }
 
-    #codelabel { grid-area: codelabel; }
-    #help { grid-area: help; text-align: right; }
+    #codelabel {
+        grid-area: codelabel;
+    }
+
+    #help {
+        grid-area: help;
+        text-align: right;
+    }
+
     .editor-container {
         grid-area: editor;
         min-width: 350px;
@@ -294,7 +301,11 @@
         flex: 1; /* Take remaining space */
         min-height: 300px;
     }
-    #theme { grid-area: theme; }
+
+    #theme {
+        grid-area: theme;
+    }
+
     #preview {
         grid-area: preview;
         display: flex;
@@ -302,8 +313,14 @@
         align-items: center;
         overflow: scroll;
     }
-    #buttons { grid-area: buttons; }
-    #rate { grid-area: rate; }
+
+    #buttons {
+        grid-area: buttons;
+    }
+
+    #rate {
+        grid-area: rate;
+    }
 </style>
 </body>
 </html>
