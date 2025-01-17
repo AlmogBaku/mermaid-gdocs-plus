@@ -1,10 +1,10 @@
-# ![Mermaid Diagrams+](logo-128.png) Mermaid Diagrams+
+# ![Mermaid Diagrams+](logo-128.png) Mermaid Diagrams +
 
 A enhanced Google Docs add-on for creating beautiful diagrams using Mermaid syntax. This project is a fork
 of [mermaid-gdocs](https://github.com/renanlecaro/mermaid-gdocs/) with an improved code editor interface for a more
 seamless diagramming experience.
 
-![Mermaid Diagrams+ Screenshot](screenshot.png)
+![Mermaid Diagrams + Screenshot](screenshot.png)
 
 ## Features
 

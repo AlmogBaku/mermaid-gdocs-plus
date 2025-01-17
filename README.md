@@ -1,11 +1,11 @@
-# mermaid-gdocs+
+# Mermaid Diagrams +
 
 [Mermaidsjs](https://mermaidjs.github.io/) wrapper for google docs
 
 This is a fork of [mermaid-gdocs](https://github.com/renanlecaro/mermaid-gdocs).
 
 # Privacy Policy
-See [PRIVACY_POLICY.md](docs/PRIVACY_POLICY.md).
+See [PRIVACY_POLICY](docs/PRIVACY_POLICY.md).
 
 # known limitations
 

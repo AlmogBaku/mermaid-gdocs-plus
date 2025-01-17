@@ -15,11 +15,3 @@ kramdown:
   syntax_highlighter: rouge
 
 show_downloads: false
-
-# SEO settings
-author:
-  name: Your Name
-  url: https://github.com/YourUsername
-github:
-  repository_url: https://github.com/YourUsername/mermaid-diagrams-plus
-  owner_url: https://github.com/YourUsername
