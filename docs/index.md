@@ -1,5 +1,3 @@
-# ![Mermaid Diagrams+](logo-128.png) Mermaid Diagrams+
-
 A Google Docs add-on that enables you to create and edit diagrams directly in your documents using Mermaid syntax. This
 tool allows you to generate flowcharts, sequence diagrams, gantt charts, and more - all within your Google Docs
 environment.

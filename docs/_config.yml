@@ -7,6 +7,7 @@ title: Mermaid Diagrams +
 description: |
   Enhanced Google Docs add-on for creating beautiful diagrams using Mermaid syntax. Features an improved code editor 
   for a more seamless diagramming experience.
+logo: logo-128.png
 
 # Build settings
 markdown: kramdown
