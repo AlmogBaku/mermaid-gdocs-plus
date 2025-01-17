@@ -37,7 +37,7 @@ We take your privacy seriously. For detailed information about how we handle you
 
 If you need help or have questions about Mermaid Diagrams+, please:
 
-- Visit our [GitHub repository](https://github.com/AlmogBaku/mermaid-gdocs) for technical documentation
+- Visit our [GitHub repository](https://github.com/AlmogBaku/mermaid-gdocs-plus/) for technical documentation
 - Create an issue on GitHub for bug reports or feature requests
 
 ## Credits
