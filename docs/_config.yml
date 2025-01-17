@@ -1,0 +1,25 @@
+remote_theme: pages-themes/primer
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+title: Mermaid Diagrams+
+description: |
+  Enhanced Google Docs add-on for creating beautiful diagrams using Mermaid syntax. Features an improved code editor 
+  for a more seamless diagramming experience.
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+show_downloads: false
+
+# SEO settings
+author:
+  name: Your Name
+  url: https://github.com/YourUsername
+github:
+  repository_url: https://github.com/YourUsername/mermaid-diagrams-plus
+  owner_url: https://github.com/YourUsername
