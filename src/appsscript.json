@@ -6,20 +6,19 @@
   "oauthScopes": [
     "https://www.googleapis.com/auth/documents",
     "https://www.googleapis.com/auth/presentations",
-    "https://www.googleapis.com/auth/script.container.ui"
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/script.scriptapp"
   ],
   "addOns": {
     "common": {
       "name": "Mermaid Diagrams+",
-      "logoUrl": "https://raw.githubusercontent.com/AlmogBaku/mermaid-gdocs/refs/heads/master/docs/logo-128.png",
-      "useLocaleFromApp": true,
-      "homepageTrigger": {
-        "runFunction": "onOpen"
-      }
+      "logoUrl": "https://raw.githubusercontent.com/AlmogBaku/mermaid-gdocs/refs/heads/master/docs/logo-128.png"
     },
     "docs": {
       "homepageTrigger": {
-        "enabled": true
+        "enabled": true,
+        "runFunction": "onOpen"
       },
       "onFileScopeGrantedTrigger": {
         "runFunction": "onOpen"
@@ -27,7 +26,8 @@
     },
     "slides": {
       "homepageTrigger": {
-        "enabled": true
+        "enabled": true,
+        "runFunction": "onOpen"
       },
       "onFileScopeGrantedTrigger": {
         "runFunction": "onOpen"

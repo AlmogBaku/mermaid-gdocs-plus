@@ -4,6 +4,9 @@
 
 This is a fork of [mermaid-gdocs](https://github.com/renanlecaro/mermaid-gdocs).
 
+# Privacy Policy
+See [PRIVACY_POLICY.md](docs/PRIVACY_POLICY.md).
+
 # known limitations
 
 - only inline images work in google docs
