@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Renan LE CARO (original author)
+Copyright (c) 2024 Renan LE CARO (original author) and Almog Baku (fork author)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

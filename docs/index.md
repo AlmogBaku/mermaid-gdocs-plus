@@ -34,13 +34,14 @@ We take your privacy seriously. For detailed information about how we handle you
 
 - Read our [Privacy Policy](PRIVACY_POLICY.md)
 - Review our [MIT License](LICENSE.md)
+- [Terms of use](TOS.md)
 
 ## Support & Contact
 
 If you need help or have questions about Mermaid Diagrams+, please:
 
 - Visit our [GitHub repository](https://github.com/AlmogBaku/mermaid-gdocs-plus/) for technical documentation
-- Create an issue on GitHub for bug reports or feature requests
+- Create an [issue on GitHub](https://github.com/AlmogBaku/mermaid-gdocs-plus/issues) for bug reports or feature requests
 
 ## Credits
 
