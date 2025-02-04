@@ -16,6 +16,8 @@ A Google Docs and Slides add-on that enables you to create and edit diagrams dir
 Mermaid syntax. This tool allows you to generate flowcharts, sequence diagrams, gantt charts, and more - all within
 your Google Docs and Google Slides documents.
 
+{% include carousel.html items=page.carousel_items %}
+
 ## What This App Does
 
 Mermaid Diagrams+ enhances your Google Docs and Slides with:
@@ -35,10 +37,6 @@ This add-on:
 - Requires document edit permissions to insert diagrams
 - Does not store any of your document content
 - Does not collect personal information beyond basic usage statistics
-
-## Examples
-
-{% include carousel.html items=page.carousel_items %}
 
 ## Privacy & Security
 

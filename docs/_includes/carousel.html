@@ -1,17 +1,18 @@
 <!-- carousel.html -->
 {% assign items = include.items %}
 {% assign height = include.height | default: "400px" %}
-{% assign interval = include.interval | default: 5000 %}
+{% assign interval = include.interval | default: 7000 %}
 
 <div class="carousel-container">
     <div class="carousel">
         {% for item in items %}
-        <div class="carousel-item fade">
+        <div class="carousel-item fade" data-type="{{ item.type }}">
             {% if item.type == "youtube" %}
             <iframe
+                    class="youtube-frame"
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/{{ item.id }}"
+                    src="https://www.youtube.com/embed/{{ item.id }}?enablejsapi=1"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
@@ -119,16 +120,50 @@
 </style>
 
 <script>
+    // Load YouTube IFrame API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
     let slideIndex = 1;
     let slideInterval = {{ interval }};
-    showSlides(slideIndex);
+    let autoPlayInterval;
+    let isPlaying = false;
+    let players = [];
+
+    // Initialize YouTube players when API is ready
+    function onYouTubeIframeAPIReady() {
+        document.querySelectorAll('.youtube-frame').forEach((frame, index) => {
+            players[index] = new YT.Player(frame, {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        });
+    }
+
+    function onPlayerStateChange(event) {
+        // If video is playing (1) or buffering (3)
+        if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.BUFFERING) {
+            isPlaying = true;
+            stopAutoPlay();
+        } else if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED) {
+            isPlaying = false;
+            startAutoPlay();
+        }
+    }
 
     function moveSlide(n) {
-        showSlides(slideIndex += n);
+        if (!isPlaying) {
+            showSlides(slideIndex += n);
+        }
     }
 
     function currentSlide(n) {
-        showSlides(slideIndex = n);
+        if (!isPlaying) {
+            showSlides(slideIndex = n);
+        }
     }
 
     function showSlides(n) {
@@ -137,6 +172,13 @@
 
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
+
+        // Pause any playing videos when switching slides
+        players.forEach(player => {
+            if (player && typeof player.pauseVideo === 'function') {
+                player.pauseVideo();
+            }
+        });
 
         for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
@@ -149,8 +191,35 @@
         dots[slideIndex-1].className += " active";
     }
 
-    // Auto advance slides
-    setInterval(() => {
-        moveSlide(1);
-    }, slideInterval);
+    function startAutoPlay() {
+        stopAutoPlay(); // Clear any existing interval
+        autoPlayInterval = setInterval(() => {
+            if (!isPlaying) {
+                moveSlide(1);
+            }
+        }, slideInterval);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+        }
+    }
+
+    // Initialize the carousel
+    showSlides(slideIndex);
+    startAutoPlay();
+
+    // Add hover handlers for the carousel
+    document.querySelector('.carousel').addEventListener('mouseenter', () => {
+        if (!isPlaying) {
+            stopAutoPlay();
+        }
+    });
+
+    document.querySelector('.carousel').addEventListener('mouseleave', () => {
+        if (!isPlaying) {
+            startAutoPlay();
+        }
+    });
 </script>
