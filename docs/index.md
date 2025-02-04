@@ -1,7 +1,19 @@
+---
+layout: default
+carousel_items:
+  - type: image
+    image: screenshot1.jpg
+    alt: Demo of Mermaid Diagrams+ in Google Docs
+  - type: image
+    image: screenshot2.jpg
+    alt: Demo of Mermaid Diagrams+ in Google Docs
+  - type: youtube
+    id: wvfFUQdLpSI
+---
 ![Mermaid Diagrams+ Logo](logo.svg)
 
 A Google Docs and Slides add-on that enables you to create and edit diagrams directly in your documents using the
-Mermaid syntax. This  tool allows you to generate flowcharts, sequence diagrams, gantt charts, and more - all within 
+Mermaid syntax. This tool allows you to generate flowcharts, sequence diagrams, gantt charts, and more - all within
 your Google Docs and Google Slides documents.
 
 ## What This App Does
@@ -26,7 +38,7 @@ This add-on:
 
 ## Examples
 
-![Mermaid Diagrams+ Screenshot](screenshot.png)
+{% include carousel.html items=page.carousel_items %}
 
 ## Privacy & Security
 
@@ -41,7 +53,9 @@ We take your privacy seriously. For detailed information about how we handle you
 If you need help or have questions about Mermaid Diagrams+, please:
 
 - Visit our [GitHub repository](https://github.com/AlmogBaku/mermaid-gdocs-plus/) for technical documentation
-- Create an [issue on GitHub](https://github.com/AlmogBaku/mermaid-gdocs-plus/issues) for bug reports or feature requests
+- Create an [issue on GitHub](https://github.com/AlmogBaku/mermaid-gdocs-plus/issues) for bug reports or feature
+  requests
+- For general inquiries, or to report security vulnerabilities - [email us](mailto:almog.baku+mermaid-plus@gmail.com).
 
 ## Credits
 
